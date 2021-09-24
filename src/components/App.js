@@ -1,9 +1,34 @@
 import '../styles/App.scss';
 //Import de datos de luista de contactos array de 4 objetos
-import data from '../data/contact.json';
+import initialData from '../data/contact.json';
 import { useState } from 'react';
 
 function App() {
+  const [data, setData] = useState(initialData);
+  const [name, setName] = useState('');
+  const [week, setWeek] = useState('');
+  const [weekend, setWeekend] = useState('');
+  const handleName = (ev) => {
+    setName(ev.currentTarget.value);
+  };
+
+  const handleWeek = (ev) => {
+    setWeek(ev.currentTarget.checked);
+  };
+
+  const handleWeekend = (ev) => {
+    setWeekend(ev.currentTarget.checked);
+  };
+
+  const handleClick = (ev) => {
+    ev.preventDefault();
+    const newClub = {
+      name: name,
+      openOnWeekdays: week,
+      openOnWeekend: weekend,
+    };
+    setData([...data, newClub]);
+  };
   //variables estado
 
   //Funciones manejadoras
@@ -52,6 +77,7 @@ function App() {
             name="name"
             id="name"
             placeholder="Nombre"
+            onChange={handleName}
           />
           <label className="new-club__option">¿Abre entre semana?</label>
           <input
@@ -59,7 +85,7 @@ function App() {
             type="checkbox"
             name="week"
             id="week"
-            checked=""
+            onChange={handleWeek}
           />
           <label className="new-club__option">¿Abre el fin de semana?</label>
           <input
@@ -67,10 +93,15 @@ function App() {
             type="checkbox"
             name="weekend"
             id="weekend"
-            checked=""
+            onChange={handleWeekend}
           />
 
-          <input className="new-club__btn" type="submit" value="Añadir" />
+          <input
+            className="new-club__btn"
+            type="submit"
+            value="Añadir"
+            onClick={handleClick}
+          />
         </form>
       </main>
     </div>
