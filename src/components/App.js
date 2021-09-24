@@ -100,23 +100,27 @@ function App() {
         {/* new club */}
         <form className="new-club__form">
           <h2 className="new-club__title">Añade un nuevo club</h2>
-          <label className="new-club__option">Nombre del club</label>
-          <input
-            className="new-club__input"
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Nombre"
-            onChange={handleName}
-          />
-          <label className="new-club__option">¿Abre entre semana?</label>
-          <input
-            className="new-club__input"
-            type="checkbox"
-            name="week"
-            id="week"
-            onChange={handleWeek}
-          />
+          <div>
+            <label className="new-club__option">Nombre del club: </label>
+            <input
+              className="new-club__input"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Escribe aquí el nombre..."
+              onChange={handleName}
+            />
+          </div>
+          <div>
+            <label className="new-club__option">¿Abre entre semana?</label>
+            <input
+              className="new-club__input"
+              type="checkbox"
+              name="week"
+              id="week"
+              onChange={handleWeek}
+            />
+          </div>
           <label className="new-club__option">¿Abre el fin de semana?</label>
           <input
             className="new-club__input"
@@ -126,12 +130,15 @@ function App() {
             onChange={handleWeekend}
           />
 
-          <input
-            className="new-club__btn"
-            type="submit"
-            value="Añadir"
-            onClick={handleClick}
-          />
+          <div>
+            {' '}
+            <input
+              className="new-club__btn"
+              type="submit"
+              value="Añadir"
+              onClick={handleClick}
+            />
+          </div>
         </form>
       </main>
     </div>
