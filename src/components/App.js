@@ -8,12 +8,35 @@ function App() {
 
   //Funciones manejadoras
 
-  //Para cada uno de los objetos de data va a generar ese html y lo acumula en una array, lo guardo en variable htmlContactList
-  //filtro en data y despues añado los arrays filtrados
-
-  //filtro las búsqueda por nombre y por apellido
-
-  return <>Hola Mundo</>;
+  return (
+    <>
+      <header className="header">
+        <h1 className="header__title">Mis clubs</h1>
+        <form>
+          <label htmlFor="show">Mostrar: </label>
+          <select className="header__select" id="size" name="size">
+            <option value="All">Todos</option>
+            <option value="week">los que abren entre semana</option>
+            <option value="wekkend">los que abren el fin de semana</option>
+          </select>
+        </form>
+      </header>
+      <main>
+        {/* club list */}
+        <ul className="club__list">
+          <li className="club__item">
+            <p className="club__name">Nombre:#Book Club</p>
+            <p className="club__week">
+              <label className="club__label">Abierto entre semana:</label>
+            </p>
+            <p className="club__weekend">
+              <label className="club__label">Abierto fin de semana:</label>
+            </p>
+          </li>
+        </ul>
+      </main>
+    </>
+  );
 }
 
 export default App;
