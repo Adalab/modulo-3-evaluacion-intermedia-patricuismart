@@ -131,7 +131,6 @@ function App() {
           />
 
           <div>
-            {' '}
             <input
               className="new-club__btn"
               type="submit"
