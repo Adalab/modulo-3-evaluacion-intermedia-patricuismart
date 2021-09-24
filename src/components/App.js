@@ -1,12 +1,25 @@
 import '../styles/App.scss';
 //Import de datos de luista de contactos array de 4 objetos
-import initialData from '../data/contact.json';
+import data from '../data/contact.json';
 import { useState } from 'react';
 
 function App() {
   //variables estado
 
   //Funciones manejadoras
+
+  //Para cada uno de los objetos de data va a generar ese html y lo acumula en una array, lo guardo en variable htmlClubList
+  const htmlClubList = data.map((oneClub, index) => (
+    <li key={index} className="club__item">
+      <p className="club__name">Nombre: {oneClub.name}</p>
+      <p className="club__week">
+        <label className="club__label">Abierto entre semana:</label>
+      </p>
+      <p className="club__weekend">
+        <label className="club__label">Abierto fin de semana:</label>
+      </p>
+    </li>
+  ));
 
   return (
     <div className="page">
@@ -23,17 +36,7 @@ function App() {
       </header>
       <main>
         {/* club list */}
-        <ul className="club__list">
-          <li className="club__item">
-            <p className="club__name">Nombre:#Book Club</p>
-            <p className="club__week">
-              <label className="club__label">Abierto entre semana:</label>
-            </p>
-            <p className="club__weekend">
-              <label className="club__label">Abierto fin de semana:</label>
-            </p>
-          </li>
-        </ul>
+        <ul className="club__list">{htmlClubList}</ul>
 
         {/* new club */}
         <form className="new-club__form">
