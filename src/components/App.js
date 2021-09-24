@@ -35,6 +35,10 @@ function App() {
     };
     //Hago clon de lo que hay en data con spread operator y luego añador nuevo club
     setData([...data, newClub]);
+
+    setName('');
+    setWeek('');
+    setWeekend('');
   };
 
   const handleFilter = (ev) => {
