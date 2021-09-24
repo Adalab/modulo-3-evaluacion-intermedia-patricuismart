@@ -13,10 +13,14 @@ function App() {
     <li key={index} className="club__item">
       <p className="club__name">Nombre: {oneClub.name}</p>
       <p className="club__week">
-        <label className="club__label">Abierto entre semana:</label>
+        <label className="club__label">
+          Abierto entre semana: {oneClub.openOnWeekdays ? 'Sí' : 'No'}
+        </label>
       </p>
       <p className="club__weekend">
-        <label className="club__label">Abierto fin de semana:</label>
+        <label className="club__label">
+          Abierto fin de semana: {oneClub.openOnWeekdays ? 'Sí' : 'No'}
+        </label>
       </p>
     </li>
   ));
@@ -55,6 +59,7 @@ function App() {
             type="checkbox"
             name="week"
             id="week"
+            checked=""
           />
           <label className="new-club__option">¿Abre el fin de semana?</label>
           <input
@@ -62,6 +67,7 @@ function App() {
             type="checkbox"
             name="weekend"
             id="weekend"
+            checked=""
           />
 
           <input className="new-club__btn" type="submit" value="Añadir" />
