@@ -61,3 +61,45 @@
     font-weight: bold;
   }
 }
+.new-club {
+  &__title {
+    padding: 3rem 0 1rem 0;
+    font-size: 1.5rem;
+    color: rgb(99, 99, 99);
+  }
+
+  &__input {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 10rem;
+    border: 2px solid #ddd;
+    border-radius: 0.5rem;
+    background-color: #f8f8f8;
+    outline: none;
+    transition: all ease 0.3s;
+
+    &:focus {
+      border-color: rgb(99, 99, 99);
+      background-color: #fff;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+  }
+
+  &__btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    border: 2px solid rgb(99, 99, 99);
+    background-color: rgb(99, 99, 99);
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: all ease 0.3s;
+
+    &:hover {
+      border-color: rgb(121, 144, 160);
+      background-color: rgb(121, 144, 160);
+    }
+  }
+}

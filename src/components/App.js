@@ -34,6 +34,35 @@ function App() {
             </p>
           </li>
         </ul>
+
+        {/* new club */}
+        <form className="new-club__form">
+          <h2 className="new-club__title">Añade un nuevo club</h2>
+          <label>Nombre del club</label>
+          <input
+            className="new-club__input"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Nombre"
+          />
+          <label>¿Abre entre semana?</label>
+          <input
+            className="new-club__input"
+            type="checkbox"
+            name="week"
+            id="week"
+          />
+          <label>¿Abre el fin de semana?</label>
+          <input
+            className="new-club__input"
+            type="checkbox"
+            name="weekend"
+            id="weekend"
+          />
+
+          <input className="new-club__btn" type="submit" value="Añadir" />
+        </form>
       </main>
     </>
   );
