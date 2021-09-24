@@ -9,7 +9,7 @@ function App() {
   //Funciones manejadoras
 
   return (
-    <>
+    <div className="page">
       <header className="header">
         <h1 className="header__title">Mis clubs</h1>
         <form>
@@ -38,7 +38,7 @@ function App() {
         {/* new club */}
         <form className="new-club__form">
           <h2 className="new-club__title">Añade un nuevo club</h2>
-          <label>Nombre del club</label>
+          <label className="new-club__option">Nombre del club</label>
           <input
             className="new-club__input"
             type="text"
@@ -46,14 +46,14 @@ function App() {
             id="name"
             placeholder="Nombre"
           />
-          <label>¿Abre entre semana?</label>
+          <label className="new-club__option">¿Abre entre semana?</label>
           <input
             className="new-club__input"
             type="checkbox"
             name="week"
             id="week"
           />
-          <label>¿Abre el fin de semana?</label>
+          <label className="new-club__option">¿Abre el fin de semana?</label>
           <input
             className="new-club__input"
             type="checkbox"
@@ -64,7 +64,7 @@ function App() {
           <input className="new-club__btn" type="submit" value="Añadir" />
         </form>
       </main>
-    </>
+    </div>
   );
 }
 
