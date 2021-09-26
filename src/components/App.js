@@ -1,5 +1,5 @@
 import '../styles/App.scss';
-//Import de datos de luista de contactos array de 4 objetos
+//Import de datos de lista de contactos array de 4 objetos data.json
 import initialData from '../data/contact.json';
 import { useState } from 'react';
 
@@ -8,6 +8,7 @@ function App() {
 
   const [data, setData] = useState(initialData);
   const [filter, setFilter] = useState('all');
+  const [errase, setErrase] = useState([]);
   const [name, setName] = useState('');
   const [week, setWeek] = useState('');
   const [weekend, setWeekend] = useState('');
@@ -41,8 +42,20 @@ function App() {
     setWeekend('');
   };
 
+  //conocer el value del select para filtrar
+
   const handleFilter = (ev) => {
     setFilter(ev.target.value);
+  };
+
+  //borrar un club cuando se hace click sobre botón "x"
+
+  const handleErrase = (ev) => {
+    ev.preventDefault();
+    setErrase(ev.target.id);
+    console.log(errase);
+    data.splice(errase, 1);
+    setErrase([...data]);
   };
 
   //Para cada uno de los objetos de data va a generar ese html y lo acumula en una array, lo guardo en variable htmlClubList
@@ -61,6 +74,15 @@ function App() {
     //añade todos los clubs
     .map((oneClub, index) => (
       <li key={index} className="club__item">
+        <div>
+          <input
+            id={index}
+            className="errase__btn"
+            type="submit"
+            value="X"
+            onClick={handleErrase}
+          />
+        </div>
         <p className="club__name">Nombre: {oneClub.name}</p>
         <p className="club__week">
           <label className="club__label">
@@ -80,7 +102,9 @@ function App() {
       <header className="header">
         <h1 className="header__title">Mis clubs</h1>
         <form>
-          <label htmlFor="show">Mostrar: </label>
+          <label className="header__label" htmlFor="show">
+            Mostrar:{' '}
+          </label>
           <select
             className="header__select"
             id="size"
