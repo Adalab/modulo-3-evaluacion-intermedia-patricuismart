@@ -74,15 +74,6 @@ function App() {
     //añade todos los clubs
     .map((oneClub, index) => (
       <li key={index} className="club__item">
-        <div>
-          <input
-            id={index}
-            className="errase__btn"
-            type="submit"
-            value="X"
-            onClick={handleErrase}
-          />
-        </div>
         <p className="club__name">Nombre: {oneClub.name}</p>
         <p className="club__week">
           <label className="club__label">
@@ -94,6 +85,13 @@ function App() {
             Abierto fin de semana: {oneClub.openOnWeekend ? 'Sí' : 'No'}
           </label>
         </p>
+        <div className="club__errase--container">
+          <i
+            className="fas fa-times-circle club__errase--btn"
+            id={index}
+            onClick={handleErrase}
+          ></i>
+        </div>
       </li>
     ));
 

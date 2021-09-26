@@ -38,7 +38,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
-
   &__item {
     margin-bottom: 1rem;
     padding: 1rem;
@@ -52,6 +51,21 @@
 
     & > * {
       margin: 3px 0;
+    }
+  }
+
+  &__errase--container {
+    text-align: end;
+  }
+  &__errase--btn {
+    padding: 0rem 1rem;
+
+    color: rgb(80, 75, 75);
+    cursor: pointer;
+    transform: scale(1.5);
+
+    &:hover {
+      color: rgb(121, 144, 160);
     }
   }
 
