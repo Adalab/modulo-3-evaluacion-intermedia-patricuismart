@@ -8,7 +8,6 @@ function App() {
 
   const [data, setData] = useState(initialData);
   const [filter, setFilter] = useState('all');
-  //const [errase, setErrase] = useState([]);
   const [name, setName] = useState('');
   const [week, setWeek] = useState(false);
   const [weekend, setWeekend] = useState(false);
