@@ -8,10 +8,10 @@ function App() {
 
   const [data, setData] = useState(initialData);
   const [filter, setFilter] = useState('all');
-  const [errase, setErrase] = useState([]);
+  //const [errase, setErrase] = useState([]);
   const [name, setName] = useState('');
-  const [week, setWeek] = useState('');
-  const [weekend, setWeekend] = useState('');
+  const [week, setWeek] = useState(false);
+  const [weekend, setWeekend] = useState(false);
 
   //Funciones manejadoras
 
@@ -52,10 +52,9 @@ function App() {
 
   const handleErrase = (ev) => {
     ev.preventDefault();
-    setErrase(ev.target.id);
-    console.log(errase);
-    data.splice(errase, 1);
-    setErrase([...data]);
+    data.splice(ev.target.id, 1);
+    console.log(ev.target.id);
+    setData([...data]);
   };
 
   //Para cada uno de los objetos de data va a generar ese html y lo acumula en una array, lo guardo en variable htmlClubList
@@ -131,6 +130,7 @@ function App() {
               id="name"
               placeholder="Escribe aquí el nombre..."
               onChange={handleName}
+              value={name}
             />
           </div>
           <div>
@@ -141,6 +141,7 @@ function App() {
               name="week"
               id="week"
               onChange={handleWeek}
+              checked={week}
             />
           </div>
           <label className="new-club__option">¿Abre el fin de semana?</label>
@@ -150,6 +151,7 @@ function App() {
             name="weekend"
             id="weekend"
             onChange={handleWeekend}
+            checked={weekend}
           />
 
           <div>
